@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.card-container {
+  display: flex;
+  width: 80vw;
+  height: 100%;
+  margin-top: 10vh;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-content: start;
+}
