@@ -14,6 +14,7 @@ const MockCard = ({props}) => {
         <div key={auctionID} style={{height: "200px", width: "150px", border: "2px solid black", backgroundColor: "blue"}}>
             <h3>{titel}</h3>
             <p>{beskrivning}</p>
+            <p>{utropspris} kr</p>
 
         </div>
 

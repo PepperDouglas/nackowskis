@@ -6,6 +6,7 @@ import SearchContainer from './SearchContainer/SearchContainer';
 
 const AuctionContainer = () => {
 
+    const [allAuctions, setAllAuctions] = useState([]);
     const [auctionData, setAuctionData] = useState([]);
     const [searchedAuctions, setSearchedAuctions] = useState([]);
     const [searchParameter, setSearchParameter] = useState([]);
@@ -39,8 +40,13 @@ const AuctionContainer = () => {
 
     //This one filters the res and sets the got data
     const setAuctions = async () => {
-        let response = await getAuctions();
-        setAuctionData(response);
+        const currentDate = new Date(); 
+        const response = await getAuctions();
+        setAllAuctions(response);
+        setAuctionData(response.filter(auction => {
+            const auctionEndDate = new Date(auction.slutDatum); 
+            return auctionEndDate > currentDate;
+        }));
     }
 
     //Component Mounting
@@ -48,8 +54,17 @@ const AuctionContainer = () => {
         setAuctions();
     }, []);
 
+    useEffect(() => {
+        if (allAuctions == null){
+            return;
+        } //?
+        setAuctionData(allAuctions.filter(auction => {
+            return auction.titel.toLowerCase().includes(searchParameter.toLowerCase());
+        }))
+    }, [searchParameter])
+
     //Mapper
-    const cardDisplay = mockDb.map((card, i) => {
+    const cardDisplay = auctionData.map((card, i) => {
         return(
             <div className='cardUnit' key={i}>
                 <MockCard props={card}></MockCard>

@@ -1,4 +1,4 @@
-const allURL = "https://nackowskis.azurewebsites.net/api/Auktion/600";
+const allURL = "http://localhost:5145/api/auktion/100/";
 
 
 
