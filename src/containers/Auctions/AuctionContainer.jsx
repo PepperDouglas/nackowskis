@@ -2,10 +2,13 @@ import { useState, useEffect } from 'react';
 import { allURL } from '../../constants/apiurls';
 import MockCard from './MockCard';
 import mockDb from './MockDB';
+import SearchContainer from './SearchContainer/SearchContainer';
 
 const AuctionContainer = () => {
 
     const [auctionData, setAuctionData] = useState([]);
+    const [searchedAuctions, setSearchedAuctions] = useState([]);
+    const [searchParameter, setSearchParameter] = useState([]);
 
 
     //This one gets all auctions data, with error checking
@@ -19,6 +22,7 @@ const AuctionContainer = () => {
         .then(res => {
             //Maybe some extra functionality here (like setting active auctions)
             return res;
+            
         }).catch((error) => {
             console.log("Error: " + error);
         });
@@ -55,6 +59,7 @@ const AuctionContainer = () => {
 
     return(
         <>
+            <SearchContainer updateSearch={setSearchParameter}></SearchContainer>
             {cardDisplay}
         </>
     );

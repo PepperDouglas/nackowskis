@@ -3,12 +3,17 @@
 
 const MockCard = ({props}) => {
 
+    const { auctionID, titel, beskrivning, startDatum, slutDatum, gruppkod, utropspris, skapadAv } = props;
 
-    console.log(props);
+    //get date
+
+    //if slutdatum < dagens datum: return </>
+    
+
     return(
-        <div style={{height: "200px", width: "150px", border: "2px solid black", backgroundColor: "blue"}}>
-            <h3>{props.name}</h3>
-            <p>{props.description}</p>
+        <div key={auctionID} style={{height: "200px", width: "150px", border: "2px solid black", backgroundColor: "blue"}}>
+            <h3>{titel}</h3>
+            <p>{beskrivning}</p>
 
         </div>
 
