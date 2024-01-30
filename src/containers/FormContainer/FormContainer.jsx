@@ -43,8 +43,8 @@ const FormContainer = () => {
         setLoading(true)
 
         const url = '/api/auktion'
-        const Gruppkod = 600
-        const auctionData = {Titel, Beskrivning, StartDatum, SlutDatum, Gruppkod, Utropspris, SkapadAv}
+        const gruppkod = 600
+        const auctionData = {Titel, Beskrivning, StartDatum, SlutDatum, gruppkod, Utropspris, SkapadAv}
         console.log(auctionData)
 
         try {
