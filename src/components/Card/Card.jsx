@@ -6,7 +6,7 @@ const Card = ({ id, title, highestBid, daysLeft }) => {
   function getRandomNumber() {
     return Math.floor(Math.random() * 6) + 1;
   }
-
+  
   const backgroundStyle = {
     background: `linear-gradient(
       180deg,
@@ -23,7 +23,7 @@ const Card = ({ id, title, highestBid, daysLeft }) => {
       <div key={id} className="auction-card" style={backgroundStyle}>
         <h2 className="card-title">{title}</h2>
         <p className="card-enddate">
-          {daysLeft > 0 ? `${daysLeft} dagar kvar` : `Auktionen är slut`}
+          {daysLeft >= 0 ? `${daysLeft + 1} dagar kvar` : `Auktionen är slut`}
         </p>
         <p className="card-leading-bid">Ledande bud</p>
         <p className="card-price">{highestBid} KR</p>

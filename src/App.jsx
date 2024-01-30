@@ -1,5 +1,5 @@
 import "./App.css";
-import AuctionContainer from "./containers/AuctionContainer/AuctionContainer";
+import AuctionContainer from "./containers/Auctions/AuctionContainer";
 
 function App() {
   return (
