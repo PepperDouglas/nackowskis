@@ -1,0 +1,16 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(130, 140, 150);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+.input {
+    margin-bottom: 15px;
+}
+
+.label {
+    display: flex;
+}

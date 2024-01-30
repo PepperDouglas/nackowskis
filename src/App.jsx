@@ -1,13 +1,14 @@
-import AuctionContainer from './containers/Auctions/AuctionContainer'
-import './App.css'
+import "./App.css";
+import AuctionContainer from "./containers/AuctionContainer/AuctionContainer";
 
 function App() {
   return (
     <>
-      <AuctionContainer></AuctionContainer>
-      
+      <div>
+        <AuctionContainer />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
