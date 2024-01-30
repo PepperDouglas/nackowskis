@@ -1,9 +1,12 @@
 import "./App.css";
+import AuctionContainer from "./containers/AuctionContainer/AuctionContainer";
 
 function App() {
   return (
     <>
-      <div></div>
+      <div>
+        <AuctionContainer />
+      </div>
     </>
   );
 }
