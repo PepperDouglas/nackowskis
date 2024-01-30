@@ -1,16 +1,29 @@
+.form-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 1);
+}
+
 .form {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(130, 140, 150);
-    padding: 15px;
-    border-radius: 10px;
-    color: white;
+  position: fixed;
+  top: 20%;
+  width: 70vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(130, 140, 150);
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
 }
 
 .input {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .label {
-    display: flex;
+  display: flex;
 }
