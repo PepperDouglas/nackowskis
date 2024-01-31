@@ -11,7 +11,9 @@ const Form = ({
   handleInputChange,
   handleSubmit,
   loading,
+  closeModal,
 }) => {
+
   return (
     <div className="form-container">
       <form className="form" onSubmit={handleSubmit}>
@@ -25,7 +27,6 @@ const Form = ({
           name="Titel"
           value={Titel}
           onChange={handleInputChange}
-          required
         />
 
         <label className="label" htmlFor="Beskrivning">
@@ -38,7 +39,6 @@ const Form = ({
           name="Beskrivning"
           value={Beskrivning}
           onChange={handleInputChange}
-          required
         />
 
         <label className="label" htmlFor="StartDatum">
@@ -51,7 +51,6 @@ const Form = ({
           name="StartDatum"
           value={StartDatum}
           onChange={handleInputChange}
-          required
         />
 
         <label className="label" htmlFor="SlutDatum">
@@ -64,7 +63,6 @@ const Form = ({
           name="SlutDatum"
           value={SlutDatum}
           onChange={handleInputChange}
-          required
         />
 
         <label className="label" htmlFor="Utropspris">
@@ -77,7 +75,6 @@ const Form = ({
           name="Utropspris"
           value={Utropspris}
           onChange={handleInputChange}
-          required
         />
 
         <label className="label" htmlFor="SkapadAv">
@@ -90,11 +87,14 @@ const Form = ({
           name="SkapadAv"
           value={SkapadAv}
           onChange={handleInputChange}
-          required
         />
 
         <button type="submit" disabled={loading}>
           {loading ? "Skapar auktion..." : "Skapa auktion"}
+        </button>
+
+        <button className="button-close" type="button" onClick={closeModal}>
+          Stäng
         </button>
       </form>
     </div>

@@ -18,8 +18,6 @@ const AuctionDetailsContainer = ({AuktionID}) => {
     fetchAuctionDetails()
   }, [id])
 
-
-
   const fetchAuctionDetails = async () => {
     try {
       const response = await fetch(`/api/auktion/100/${id}`)
@@ -48,7 +46,7 @@ const AuctionDetailsContainer = ({AuktionID}) => {
   }
 
   const handleBidClick = async () => {
-    if(userBid < highestBid) {
+    if(userBid < highestBid || userBid < auktion.utropspris) {
       alert("Du har lagt för lågt bud")
       return
     }

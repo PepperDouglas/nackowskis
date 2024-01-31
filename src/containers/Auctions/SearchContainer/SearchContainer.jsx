@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./SearchContainer.css";
+import { Link } from 'react-router-dom'
 
-const SearchContainer = ({ updateSearch }) => {
+const SearchContainer = ({ updateSearch, setAuctions }) => {
   const [fieldValue, setFieldValue] = useState("");
 
   const updateValue = (e) => {
@@ -15,13 +16,17 @@ const SearchContainer = ({ updateSearch }) => {
 
   return (
     <>
-      <input
+        <button onClick={setAuctions} className="button">
+            Aktiva auktioner
+        </button>
+
+        <input
         id="input"
         value={fieldValue}
         placeholder="Sök auktion"
         onChange={updateValue}
-      ></input>
-      <button onClick={updateSearchParameter}>Sök</button>
+        ></input>
+        <button onClick={updateSearchParameter}>Sök</button>
     </>
   );
 };

@@ -77,6 +77,10 @@ const FormContainer = ({ closeModal }) => {
     }
   };
 
+  const handleClose = (e) => {
+    closeModal()
+  }
+
   return (
     <Form
       Titel={Titel}
@@ -88,6 +92,7 @@ const FormContainer = ({ closeModal }) => {
       handleSubmit={handleSubmit}
       handleInputChange={handleInputChange}
       loading={loading}
+      closeModal={handleClose}
     />
   );
 };
