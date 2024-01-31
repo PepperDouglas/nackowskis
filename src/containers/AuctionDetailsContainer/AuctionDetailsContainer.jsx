@@ -76,7 +76,7 @@ const AuctionDetailsContainer = ({AuktionID}) => {
 
   const removeAuction = async () => {
     try {
-      const response = await fetch(`/api/auktion/${id}`, {
+      const response = await fetch(`/api/auktion/100/${id}`, {
         method: "DELETE",
       })
       
@@ -89,7 +89,6 @@ const AuctionDetailsContainer = ({AuktionID}) => {
       }
       catch(error) {('Något gick fel.', error.message)}
   }
-  
 
   const updateNumberInput = (e) => {
     const { value } = e.target
@@ -107,27 +106,26 @@ const AuctionDetailsContainer = ({AuktionID}) => {
   }
 
   const updateAuction = async () => {
-
     try {
-      const response = await fetch("/api/auktion", {
+      const response = await fetch(`/api/auktion/100/${id}`, {
           method: "PUT",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify(
             {
-              AuktionID: id,
-              Titel: title, 
-              Beskrivning: description,
-              StartDatum: "2024-01-01",
-              SlutDatum: "2024-01-31",
-              Gruppkod: 100,
-              Utropspris: 2500, 
-              SkapadAv: "Kalle"
+              "AuktionID": id,
+              "Titel": title, 
+              "Beskrivning": description,
+              "StartDatum": "2024-01-01",
+              "SlutDatum": "2024-02-31",
+              "Gruppkod": 100,
+              "Utropspris": 2500,
+              "SkapadAv": "Kalle"
             }
           )
       })
       
       if (!response.ok) {
-          throw new Error('Något gick fel.')
+          throw new Error('Något gick fel.', error)
       }
 
       const data = await response.json()
@@ -151,6 +149,7 @@ const AuctionDetailsContainer = ({AuktionID}) => {
   updateAuction={updateAuction}
   handleBidClick={handleBidClick}
   updateNumberInput={updateNumberInput}
+  removeAuction={removeAuction}
   />
 }
 

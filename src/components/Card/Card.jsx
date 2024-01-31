@@ -26,7 +26,7 @@ const Card = ({ id, title, highestBid, daysLeft }) => {
           {daysLeft >= 0 ? `${daysLeft + 1} dagar kvar` : `Auktionen är slut`}
         </p>
         <p className="card-leading-bid">Ledande bud</p>
-        <p className="card-price">{highestBid} KR</p>
+        <p className="card-price">{highestBid} kr</p>
         <button className="card-button">Lägg bud</button>
       </div>
     </Link>
