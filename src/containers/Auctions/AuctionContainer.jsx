@@ -96,8 +96,8 @@ const AuctionContainer = () => {
   return (
     <>
       <div className="search-container">
-        <SearchContainer updateSearch={setSearchParameter}></SearchContainer>
-        <button onClick={handleButtonClick}>Ny Auktion</button>
+        <SearchContainer updateSearch={setSearchParameter} setAuctions={setAuctions}></SearchContainer>
+        <button onClick={handleButtonClick}>Ny auktion</button>
       </div>
       <div className="card-container">{cardDisplay}</div>
       {showModal && <FormContainer closeModal={closeModal} />}

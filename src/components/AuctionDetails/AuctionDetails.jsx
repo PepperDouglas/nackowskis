@@ -49,7 +49,7 @@ const AuctionDetails = ({auktion, bids, handleTitleChange, handleDescriptionChan
             <ul className='bid-history'>
               
               {(new Date(auktion.slutDatum) > new Date()) ? (bids.map((bid) => {
-              return <li>{bid.summa}</li>
+              return <li>{bid.summa} kr</li>
               }).reverse()) : bids[bids.length-1].summa}
             </ul>
           </div>
