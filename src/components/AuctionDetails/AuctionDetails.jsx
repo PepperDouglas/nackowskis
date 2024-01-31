@@ -1,7 +1,8 @@
 import React from 'react'
 import "./AuctionDetails.css"
+import { Link } from 'react-router-dom'
 
-const AuctionDetails = ({auktion, bids, handleTitleChange, handleDescriptionChange, title, description, updateAuction, updateNumberInput, handleBidClick, highestBid }) => {
+const AuctionDetails = ({auktion, bids, handleTitleChange, handleDescriptionChange, title, description, updateAuction, updateNumberInput, handleBidClick, highestBid, removeAuction }) => {
 
   console.log(auktion)
 
@@ -10,12 +11,17 @@ const AuctionDetails = ({auktion, bids, handleTitleChange, handleDescriptionChan
 
       <div className='header-box'>
         <div>
-          <img src={"https://bilweb-auctions-images.s3-eu-west-1.amazonaws.com/1800x1200/object/volkswagen-typ-1-13568-16228315111.jpeg"} />
+          <img src={"https://images.unsplash.com/photo-1656543802898-41c8c46683a7?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} />
           </div>
           <div className='header-text'>
           <input type='text' value={title} onChange={handleTitleChange} placeholder={auktion.titel}></input>
-          <p>5 dagar kvar</p>
           <input onChange={updateNumberInput} type="number" placeholder='Lägg bud' />
+
+          <button
+          onClick={() => handleBidClick()}
+          disabled={(new Date(auktion.slutDatum) < new Date())}>
+            Lägg bud
+          </button>
 
           <button
           onClick={() => updateAuction()} 
@@ -26,17 +32,11 @@ const AuctionDetails = ({auktion, bids, handleTitleChange, handleDescriptionChan
           disabled={highestBid !== null}>
             Ta bort
           </button>
-
-          <button
-          onClick={() => handleBidClick()}
-          disabled={(new Date(auktion.slutDatum) < new Date())}>
-            Lägg bud
-          </button>
           </div>
         </div>
 
         <div className='information-box'>
-          <div>
+          <div className='description-bid'>
             <h2>Beskrivning:</h2>
             <input type='text' value={description} onChange={handleDescriptionChange} placeholder={auktion.beskrivning}></input>
           </div>
@@ -53,19 +53,12 @@ const AuctionDetails = ({auktion, bids, handleTitleChange, handleDescriptionChan
 
         </div>
 
+        <Link className='prev' to="/">
+              <div>Tillbaks till auktioner</div>
+        </Link>
+
     </div>
   )
 }
-
-// använd denna kod som har rätt variabler
-{/* <div>
-    <h1>Auktion: {auktion.Titel}</h1>
-    <img src={auktion.bild} alt={`Auktion ${auktion.AuktionID}`} />
-    <p>Auktion ID: {auktion.AuktionID}</p>
-    <p>Beskrivning: {auktion.Beskrivning}</p>
-    <p>StartDatum: {auktion.StartDatum}</p>
-    <p>SlutDatum: {auktion.SlutDatum}</p>
-    <p>Pris: {auktion.Utropspris}kr</p>
-</div> */}
 
 export default AuctionDetails

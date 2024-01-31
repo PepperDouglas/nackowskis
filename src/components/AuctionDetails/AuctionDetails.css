@@ -1,8 +1,4 @@
 .auction-box {
-    margin-top: 150px;
-    margin-bottom: 150px;
-    width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,6 +25,7 @@ img {
     justify-content: space-between;
     align-items: center;
     white-space: nowrap;
+    margin-top: 10px;
 }
 
 h1 {
@@ -60,4 +57,11 @@ h2 {
 
 li {
     padding-bottom: 8px;
+}
+
+.prev {
+    margin-top: 25px;
+    display: flex;
+    width: 100%;
+    text-align: start;
 }

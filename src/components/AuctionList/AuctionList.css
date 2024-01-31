@@ -6,6 +6,6 @@
   height: 100%;
   margin-top: 10vh;
   flex-wrap: wrap;
-  justify-content: start;
-  align-content: start;
+  justify-content: center;
+  align-content: center;
 }

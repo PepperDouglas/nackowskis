@@ -16,8 +16,9 @@ const SearchContainer = ({ updateSearch }) => {
   return (
     <>
       <input
+        id="input"
         value={fieldValue}
-        placeholder="Search auction"
+        placeholder="Sök auktion"
         onChange={updateValue}
       ></input>
       <button onClick={updateSearchParameter}>Sök</button>
